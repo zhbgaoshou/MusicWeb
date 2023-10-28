@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4272163 */
+  src: url("//at.alicdn.com/t/c/font_4272163_bo75xi12qdu.woff2?t=1698200473203")
+      format("woff2"),
+    url("//at.alicdn.com/t/c/font_4272163_bo75xi12qdu.woff?t=1698200473203")
+      format("woff"),
+    url("//at.alicdn.com/t/c/font_4272163_bo75xi12qdu.ttf?t=1698200473203")
+      format("truetype");
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dianzan:before {
+  content: "\e8ad";
+}
+
+.icon-shanchu:before {
+  content: "\e71b";
+}
+
+.icon-bofangliang:before {
+  content: "\e637";
+}
+
+.icon-changpian:before {
+  content: "\e71a";
+}
+
+.icon-bofangzhong:before {
+  content: "\e617";
+}
+
+.icon-bofangliebiao:before {
+  content: "\e716";
+}
+
+.icon-fenxiangyemian:before {
+  content: "\e6bc";
+}
+
+.icon-bofanggedan:before {
+  content: "\e6c2";
+}
+
+.icon-suijibofang:before {
+  content: "\e6c3";
+}
+
+.icon-xunhuanbofang:before {
+  content: "\e6c4";
+}
+
+.icon-gedan:before {
+  content: "\e6c5";
+}
+
+.icon-kuaijin:before {
+  content: "\e6be";
+}
+
+.icon-daotui:before {
+  content: "\e6c1";
+}
+
+.icon-xiayishou:before {
+  content: "\e6ae";
+}
+
+.icon-bofang:before {
+  content: "\e6af";
+}
+
+.icon-guanbishengyin:before {
+  content: "\e6b0";
+}
+
+.icon-zanting:before {
+  content: "\e6b1";
+}
+
+.icon-zuidayinliang:before {
+  content: "\e6b2";
+}
+
+.icon-shangyishouge:before {
+  content: "\e6c0";
+}
+
+.icon-guanjioff:before {
+  content: "\e600";
+}
+
+.icon-dakai:before {
+  content: "\e85a";
+}
+
+.icon-diantai:before {
+  content: "\e717";
+}
+
+.icon-yinle1:before {
+  content: "\e718";
+}
+
+.icon-yinle2:before {
+  content: "\e719";
+}
+
+.icon-sousuo:before {
+  content: "\e632";
+}
+
+.icon-xiangyoujiantou:before {
+  content: "\e65f";
+}
+
+.icon-xiangzuojiantou:before {
+  content: "\e660";
+}
+
+.icon-fuzhilianjie:before {
+  content: "\e6bb";
+}
+
+.icon-guanyu:before {
+  content: "\e6bd";
+}
+
+.icon-yinfu01:before {
+  content: "\e6bf";
+}
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+
