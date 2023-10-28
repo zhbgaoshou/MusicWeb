@@ -3,14 +3,17 @@ import BaseMVCard from "@/base/BaseMVCard.vue";
 </script>
 
 <template>
-  <div class="newmv">
-    <BaseMVCard :dataList="30"></BaseMVCard>
+  <div class="dis-mv">
+    <h4>发现MV</h4>
+
+    <BaseMVCard :dataList="2"></BaseMVCard>
   </div>
 </template>
 
 <style scoped lang="scss">
-.newmv {
-  padding-right: 5px;
-  height: 100%;
+.dis-mv {
+  h4 {
+    margin: 2.6667vw 0;
+  }
 }
 </style>
