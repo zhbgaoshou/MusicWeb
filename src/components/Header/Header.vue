@@ -4,7 +4,7 @@ import HeaderRight from "./component/HeaderRight.vue";
 </script>
 
 <template>
-  <div class="header">
+  <div class="header" id="head">
     <HeaderLeft />
     <HeaderRight />
   </div>
@@ -14,7 +14,7 @@ import HeaderRight from "./component/HeaderRight.vue";
 .header {
   @include vertical-center;
   justify-content: space-between;
-  flex-basis: 6.6667vw;
+  flex-basis: $h-height;
   background-color: $hd-bg-color;
   min-height: 50px;
   max-height: 50px;

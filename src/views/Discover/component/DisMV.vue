@@ -5,7 +5,6 @@ import BaseMVCard from "@/base/BaseMVCard.vue";
 <template>
   <div class="dis-mv">
     <h4>发现MV</h4>
-
     <BaseMVCard :dataList="2"></BaseMVCard>
   </div>
 </template>

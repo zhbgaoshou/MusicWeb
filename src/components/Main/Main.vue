@@ -1,11 +1,12 @@
 <script setup>
 import Aside from "./component/Aside/Aside.vue";
 import Content from "./component/Content/Content.vue";
+import { useRoute } from "vue-router";
 </script>
 
 <template>
   <div class="main">
-    <Aside></Aside>
+    <Aside v-if="useRoute().path !== '/mvdetail'"></Aside>
     <Content></Content>
   </div>
 </template>

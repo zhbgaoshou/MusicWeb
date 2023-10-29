@@ -114,6 +114,8 @@ nextTick(() => {
 
 <style scoped lang="scss">
 .carousel {
+  position: relative;
+  z-index: 1;
   display: grid;
   height: 60%;
   grid-template-columns: 1fr 2fr;

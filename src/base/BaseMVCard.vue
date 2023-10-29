@@ -1,10 +1,22 @@
 <script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 const props = defineProps(["dataList"]);
+
+function goMvDetail(mv_id) {
+  router.push({
+    name: "mvdetail",
+    query: {
+      mv_id,
+    },
+  });
+}
 </script>
 
 <template>
   <div class="grid-box">
-    <div v-for="i in props.dataList">
+    <div v-for="i in props.dataList" @click="goMvDetail(1)">
       <div class="grid-item">
         <img src="@/assets/images/swiper/one/v15.jpg" alt="" />
       </div>

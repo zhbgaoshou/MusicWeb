@@ -45,6 +45,21 @@ const routes = [
     path: "/",
     redirect: "/discover",
   },
+  {
+    path: "/search",
+    name: "search",
+    component: () => import("@/views/Search/search.vue"),
+  },
+  {
+    path: "/songdetail",
+    name: "songdetail",
+    component: () => import("@/views/SongDetail/SongDetail.vue"),
+  },
+  {
+    path: "/mvdetail",
+    name: "mvdetail",
+    component: () => import("@/views/MVDetail/MVDetail.vue"),
+  },
   ...menuRoute,
 ];
 

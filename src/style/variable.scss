@@ -5,4 +5,12 @@ $ft-bg-color:var(--ftBgColor, #FFF);
 $aside-bg-color:var(--asideBgColor, #FFF);
 $default-font-size:1.6vw;
 $hover:#b0aeae85;
-$t-color:#5d5c5c
+$t-color:#5d5c5c;
+
+$f-height:80px;
+$h-height:50px;
+
+
+// plalist高度
+
+$p-height:calc(100vh - $f-height - $h-height);

@@ -1,11 +1,22 @@
 <script setup>
+import { useRouter } from "vue-router";
 const props = defineProps(["dataList"]);
+
+const router = useRouter();
+
+function goDetail(song_id) {
+  router.push({
+    name: "songdetail",
+    query: {
+      song_id,
+    },
+  });
+}
 </script>
 
 <template>
   <div class="grid-box">
-    <slot></slot>
-    <div style="cursor: pointer" v-for="data in dataList">
+    <div style="cursor: pointer" v-for="data in dataList" @click="goDetail(1)">
       <div class="grid-item">
         <img src="@/assets/images/swiper/one/v12.jpg" alt="" />
       </div>

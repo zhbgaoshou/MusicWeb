@@ -6,7 +6,7 @@ import DisMV from "./component/DisMV.vue";
 </script>
 
 <template>
-  <div class="dis">
+  <div class="dis" id="dis">
     <Carousel></Carousel>
     <DisRec></DisRec>
     <DisMusic></DisMusic>
