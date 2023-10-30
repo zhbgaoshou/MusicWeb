@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from "vue-router";
-const props = defineProps(["dataList"]);
+const props = defineProps(["dataList", "fy"]);
 
 const router = useRouter();
 
@@ -25,6 +25,15 @@ function goDetail(song_id) {
       </p>
     </div>
   </div>
+  <div class="fy" v-if="props.fy">
+    <el-pagination
+      small
+      background
+      pager-count="5"
+      layout="prev, pager, next"
+      :total="1000"
+    />
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -36,7 +45,7 @@ function goDetail(song_id) {
 
   .txt {
     margin: 10px;
-    font-size: 14px;
+    font-size: 12px;
     color: $t-color;
     line-height: 20px;
     @include ell-mline();
@@ -50,5 +59,12 @@ function goDetail(song_id) {
       @include img-style;
     }
   }
+}
+
+.fy {
+  display: flex;
+  justify-content: end;
+  height: max-content;
+  margin-top: 10px;
 }
 </style>

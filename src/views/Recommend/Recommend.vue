@@ -43,7 +43,7 @@ const navList = reactive(["全部", "欧美", "华语", "流行", "说唱", "摇
       </div>
     </div>
     <BaseNav class="rec-nav" :navList="navList"></BaseNav>
-    <BaseSongCard :dataList="30"> </BaseSongCard>
+    <BaseSongCard :dataList="30" fy="true"> </BaseSongCard>
   </div>
 </template>
 
@@ -113,6 +113,12 @@ const navList = reactive(["全部", "欧美", "华语", "流行", "说唱", "摇
       width: 24vw;
       height: 24vw;
     }
+  }
+  .fy {
+    display: flex;
+    justify-content: end;
+    height: max-content;
+    margin-top: 10px;
   }
 }
 </style>

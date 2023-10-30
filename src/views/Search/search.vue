@@ -14,13 +14,13 @@ import BaseMusicCard from "@/base/BaseMusicCard.vue";
     <div class="search-main">
       <el-tabs model-value="first" @tab-click="handleClick">
         <el-tab-pane label="单曲" name="first">
-          <BaseMusicCard :dataList="10"></BaseMusicCard>
+          <BaseMusicCard :dataList="10" fy="1"></BaseMusicCard>
         </el-tab-pane>
         <el-tab-pane label="歌单" name="second">
-          <BaseSongCardVue :data-list="10"></BaseSongCardVue>
+          <BaseSongCardVue :data-list="10" fy="1"></BaseSongCardVue>
         </el-tab-pane>
         <el-tab-pane label="MV" name="third">
-          <BaseMVCard :data-list="10"></BaseMVCard>
+          <BaseMVCard :data-list="10" fy="1"></BaseMVCard>
         </el-tab-pane>
       </el-tabs>
     </div>

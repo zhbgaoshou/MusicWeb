@@ -2,7 +2,7 @@
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const props = defineProps(["dataList"]);
+const props = defineProps(["dataList", "fy"]);
 
 function goMvDetail(mv_id) {
   router.push({
@@ -23,6 +23,15 @@ function goMvDetail(mv_id) {
       <p>名字</p>
       <p>作者</p>
     </div>
+  </div>
+  <div class="fy" v-if="props.fy">
+    <el-pagination
+      small
+      background
+      pager-count="5"
+      layout="prev, pager, next"
+      :total="1000"
+    />
   </div>
 </template>
 
@@ -46,5 +55,11 @@ function goMvDetail(mv_id) {
     margin: 5px;
     color: $t-color;
   }
+}
+.fy {
+  display: flex;
+  justify-content: end;
+  height: max-content;
+  margin-top: 10px;
 }
 </style>

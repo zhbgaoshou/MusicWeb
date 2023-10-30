@@ -10,7 +10,7 @@ const navList = reactive(["全部", "欧美", "华语", "流行", "说唱", "摇
   <div class="newmv">
     <BaseNav class="rec-nav" :navList="navList"></BaseNav>
 
-    <BaseMVCard :dataList="30"></BaseMVCard>
+    <BaseMVCard :dataList="30" fy="yes"></BaseMVCard>
   </div>
 </template>
 

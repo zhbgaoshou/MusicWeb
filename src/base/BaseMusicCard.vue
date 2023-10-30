@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps(["dataList"]);
+const props = defineProps(["dataList", "fy"]);
 </script>
 
 <template>
@@ -13,6 +13,16 @@ const props = defineProps(["dataList"]);
 
       <span>03:01</span>
     </div>
+  </div>
+
+  <div class="fy" v-if="props.fy">
+    <el-pagination
+      small
+      background
+      pager-count="5"
+      layout="prev, pager, next"
+      :total="1000"
+    />
   </div>
 </template>
 
@@ -46,6 +56,13 @@ const props = defineProps(["dataList"]);
       flex-basis: 6.6667vw;
     }
   }
+}
+
+.fy {
+  display: flex;
+  justify-content: end;
+  height: max-content;
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 765px) {
