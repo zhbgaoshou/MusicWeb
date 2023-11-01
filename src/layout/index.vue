@@ -6,13 +6,19 @@ import PlayList from "../components/PlayList/PlayList.vue";
 import BaseInfoCard from "../base/BaseInfoCard.vue";
 import Lyric from "../components/Lyric/Lyric.vue";
 
-import { useControlsStore } from "@/store/index";
+import { useControlsStore, usePlayerStore } from "@/store/index";
 import { computed } from "vue";
 
 const controlsStore = useControlsStore();
+const playerStore = usePlayerStore();
 
 const s_r = computed(() => (controlsStore.is_show_setiing ? "0" : "-110%"));
 const g_r = computed(() => (controlsStore.is_show_git ? "0" : "-110%"));
+
+function changeVolume(newVolume) {
+  playerStore.volume = newVolume / 100;
+  localStorage.setItem("volume", newVolume / 100);
+}
 </script>
 
 <template>
@@ -23,11 +29,32 @@ const g_r = computed(() => (controlsStore.is_show_git ? "0" : "-110%"));
     <BaseInfoCard :style="{ right: s_r }">
       <div class="volume">
         <img src="@/assets/svg/fot-r/8666734_volume_2_icon.svg" alt="" />
-        <el-slider style="margin-left: 20px" v-model="controlsStore.volume" />
+        <el-slider
+          @change="changeVolume"
+          style="margin: 0 20px"
+          v-model="playerStore.slider_value"
+        />
       </div>
       <div class="order">
-        <img src="@/assets/svg/order.svg" alt="" />
-        <span class="order-info">顺序播放</span>
+        <img
+          v-if="playerStore.orderPlay === 1"
+          @click="playerStore.changeOrder()"
+          src="@/assets/svg/order.svg"
+          alt=""
+        />
+        <img
+          v-else-if="playerStore.orderPlay === 2"
+          @click="playerStore.changeOrder()"
+          src="@/assets/svg/player/8666613_sj_icon.svg"
+          alt=""
+        />
+        <img
+          v-else
+          @click="playerStore.changeOrder()"
+          src="@/assets/svg/player/8666728_xh_cw_icon.svg"
+          alt=""
+        />
+        <span class="order-info">{{ playerStore.orderText }}播放</span>
       </div>
     </BaseInfoCard>
     <BaseInfoCard :style="{ right: g_r }">

@@ -1,11 +1,33 @@
 <script setup>
-import BaseSongCard from "@/base/BaseSongCard.vue";
+import BaseSongCardGrid from "@/base/BaseSongCardGrid.vue";
+import { useDiscoverStore } from "@/store";
+const discoverStore = useDiscoverStore();
+
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+function goDetail(song_id) {
+  router.push({
+    name: "songdetail",
+    query: {
+      song_id,
+    },
+  });
+}
 </script>
 
 <template>
   <div class="dis-rec">
     <h4>发现歌单</h4>
-    <BaseSongCard :dataList="10"></BaseSongCard>
+    <BaseSongCardGrid>
+      <BaseSongCard
+        v-for="data in discoverStore.discoverRecList"
+        :key="data.id"
+        :txt="data.name"
+        :image="data.picUrl"
+      ></BaseSongCard>
+    </BaseSongCardGrid>
   </div>
 </template>
 

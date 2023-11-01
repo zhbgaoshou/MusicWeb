@@ -8,6 +8,23 @@ import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
 
 nextTick(() => {
+  new Swiper("#swiper2", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+    effect: "cards",
+    grabCursor: true,
+    autoplay: {
+      delay: 500,
+    },
+
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+  });
+
   new Swiper("#swiper1", {
     // Optional parameters
     direction: "horizontal",
@@ -26,24 +43,6 @@ nextTick(() => {
       prevEl: ".swiper-button-prev",
     },
   });
-
-  new Swiper("#swiper2", {
-    // Optional parameters
-    direction: "horizontal",
-    loop: true,
-    effect: "cards",
-    grabCursor: true,
-    autoplay: {
-      delay: 500,
-    },
-
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-  });
-
   new Swiper("#swiper3", {
     // Optional parameters
     direction: "vertical",

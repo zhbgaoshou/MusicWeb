@@ -1,11 +1,21 @@
 <script setup>
-import BaseMVCard from "@/base/BaseMVCard.vue";
+import { useDiscoverStore } from "@/store";
+import BaseMVCardGrid from "@/base/BaseMVCardGrid.vue";
+const discoverStore = useDiscoverStore();
 </script>
 
 <template>
   <div class="dis-mv">
     <h4>发现MV</h4>
-    <BaseMVCard :dataList="2"></BaseMVCard>
+    <BaseMVCardGrid>
+      <BaseMVCard
+        v-for="data in discoverStore.discoverRecMVList"
+        :key="data.id"
+        :image="data.picUrl"
+        :name="data.name"
+        :artist="data.artistName"
+      ></BaseMVCard>
+    </BaseMVCardGrid>
   </div>
 </template>
 

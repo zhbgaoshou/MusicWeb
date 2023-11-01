@@ -1,8 +1,12 @@
 <script setup>
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
-import BaseSongCard from "@/base/BaseSongCard.vue";
+import BaseSongCardGrid from "@/base/BaseSongCardGrid.vue";
 import BaseNav from "@/base/BaseNav.vue";
+import { useRecommentStore } from "../../store";
+
+const recommentStore = useRecommentStore();
+recommentStore.getRecSongList();
 
 const router = useRouter();
 
@@ -43,7 +47,24 @@ const navList = reactive(["全部", "欧美", "华语", "流行", "说唱", "摇
       </div>
     </div>
     <BaseNav class="rec-nav" :navList="navList"></BaseNav>
-    <BaseSongCard :dataList="30" fy="true"> </BaseSongCard>
+    <BaseSongCardGrid fy="yes">
+      <BaseSongCard
+        v-for="data in recommentStore.recommendList"
+        :key="data.id"
+        :txt="data.name"
+        :image="data.coverImgUrl"
+      ></BaseSongCard>
+    </BaseSongCardGrid>
+
+    <div class="fy">
+      <el-pagination
+        small
+        background
+        :pager-count="5"
+        layout="prev, pager, next"
+        :total="1000"
+      />
+    </div>
   </div>
 </template>
 

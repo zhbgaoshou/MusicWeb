@@ -1,5 +1,9 @@
 <script setup>
-import BaseMusicCard from "@/base/BaseMusicCard.vue";
+import BaseMusicCardGrid from "@/base/BaseMusicCardGrid.vue";
+import { zeroFill, millisecondsToMinutes } from "@/utils/index";
+
+import { useDiscoverStore } from "@/store";
+const discoverStore = useDiscoverStore();
 </script>
 
 <template>
@@ -19,7 +23,17 @@ import BaseMusicCard from "@/base/BaseMusicCard.vue";
         />
       </el-tooltip>
     </h4>
-    <BaseMusicCard :dataList="10"></BaseMusicCard>
+    <BaseMusicCardGrid>
+      <BaseMusicCard
+        v-for="(data, index) in discoverStore.discoverRecNewSongList"
+        :key="data.id"
+        :IDX="zeroFill(index + 1)"
+        :image="data.picUrl"
+        :songName="data.name"
+        :singer="data.song.artists[0].name"
+        :playTime="millisecondsToMinutes(data.song.hMusic.playTime)"
+      ></BaseMusicCard>
+    </BaseMusicCardGrid>
   </div>
 </template>
 

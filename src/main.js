@@ -7,8 +7,12 @@ import "@/assets/font/index.css";
 import App from "./App.vue";
 import router from "./router/index";
 
-createApp(App)
-  .use(router)
-  .use(createPinia())
+import BaseSongCard from "@/base/BaseSongCard.vue";
+import BaseMusicCard from "@/base/BaseMusicCard.vue";
+import BaseMVCard from "@/base/BaseMVCard.vue";
 
-  .mount("#app");
+const app = createApp(App);
+app.component("BaseSongCard", BaseSongCard);
+app.component("BaseMusicCard", BaseMusicCard);
+app.component("BaseMVCard", BaseMVCard);
+app.use(router).use(createPinia()).mount("#app");

@@ -1,9 +1,18 @@
 <script setup>
 import { computed } from "vue";
-import { useControlsStore } from "@/store/index";
+import { useControlsStore, useMusicStore } from "@/store/index";
+
 const controlsStore = useControlsStore();
+const musicStore = useMusicStore();
 
 const r = computed(() => (controlsStore.is_show_play_list ? "0" : "-300px"));
+
+function playSong(index) {
+  console.log(index);
+  console.log(musicStore.curIndex);
+
+  musicStore.curIndex = index;
+}
 </script>
 
 <template>
@@ -12,12 +21,23 @@ const r = computed(() => (controlsStore.is_show_play_list ? "0" : "-300px"));
       <h4>播放列表</h4>
     </div>
     <div class="content">
-      <div class="song-item" v-for="i in 100">
-        <span>01</span>
-        <span>songnamesongname</span>
+      <div
+        class="song-item"
+        :class="{ active: index == musicStore.curIndex }"
+        v-for="(song, index) in musicStore.playList"
+        @click="playSong(index)"
+      >
+        <span>{{ index + 1 }}</span>
+        <span>{{ song.songname }}</span>
         <i></i>
-        <span>name</span>
+        <span>{{ song.name }}</span>
       </div>
+
+      <el-empty
+        description="播放列表为空"
+        v-if="!musicStore.playList.length"
+        :image-size="200"
+      />
     </div>
   </div>
 </template>
@@ -51,7 +71,7 @@ const r = computed(() => (controlsStore.is_show_play_list ? "0" : "-300px"));
       border-bottom: 1px solid #eee;
 
       &:hover {
-        background-color: #f3b8b8;
+        background-color: #8af3d5;
       }
 
       i {
@@ -83,5 +103,10 @@ const r = computed(() => (controlsStore.is_show_play_list ? "0" : "-300px"));
       }
     }
   }
+}
+
+.active {
+  background-color: #edcbcb;
+  border-radius: 10px;
 }
 </style>
